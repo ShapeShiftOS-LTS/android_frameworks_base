@@ -43,6 +43,7 @@ public class PixelPropsUtils {
             "com.google.android.apps.wallpaper",
             "com.google.android.apps.maps",
             "com.google.android.apps.nexuslauncher",
+            "com.google.android.inputmethod.latin",
             "com.amazon.avod.thirdpartyclient",
             "com.disney.disneyplus",
             "com.netflix.mediaclient",
