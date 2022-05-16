@@ -1774,7 +1774,6 @@ public class NotificationManagerService extends SystemService {
         }
     }
 
-    private LockPatternUtils mLockPatternUtils;
     private StrongAuthTracker mStrongAuthTracker;
 
     public NotificationManagerService(Context context) {
@@ -1994,7 +1993,6 @@ public class NotificationManagerService extends SystemService {
                 ServiceManager.getService(Context.PLATFORM_COMPAT_SERVICE));
 
         mUiHandler = new Handler(UiThread.get().getLooper());
-        mLockPatternUtils = new LockPatternUtils(getContext());
         mStrongAuthTracker = new StrongAuthTracker(getContext());
         String[] extractorNames;
         try {
@@ -2434,7 +2432,7 @@ public class NotificationManagerService extends SystemService {
                 bubbsExtractor.setShortcutHelper(mShortcutHelper);
             }
             registerNotificationPreferencesPullers();
-            mLockPatternUtils.registerStrongAuthTracker(mStrongAuthTracker);
+            new LockPatternUtils(getContext()).registerStrongAuthTracker(mStrongAuthTracker);
         } else if (phase == SystemService.PHASE_THIRD_PARTY_APPS_CAN_START) {
             // This observer will force an update when observe is called, causing us to
             // bind to listener services.
