@@ -25342,6 +25342,11 @@ public class PackageManagerService extends IPackageManager.Stub
         public boolean isSuspendingAnyPackages(String suspendingPackage, int userId) {
             return PackageManagerService.this.isSuspendingAnyPackages(suspendingPackage, userId);
         }
+
+        @Override
+        public int getInstalledSdkVersion(AndroidPackage pkg) {
+            return PackageManagerService.this.getSettingsVersionForPackage(pkg).sdkVersion;
+        }
     }
 
     @GuardedBy("mLock")
