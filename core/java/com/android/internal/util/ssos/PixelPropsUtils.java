@@ -35,35 +35,35 @@ public class PixelPropsUtils {
     private static final Map<String, Object> propsToChangeOnePlus9Pro;
 
     private static final String[] packagesToChange = {
-            "com.google.android.as",
-            "com.google.android.soundpicker",
-            "com.google.android.apps.safetyhub",
-            "com.google.android.apps.turbo",
-            "com.google.android.apps.turboadapter",
-            "com.google.android.apps.wallpaper",
-            "com.google.android.apps.maps",
-            "com.google.android.apps.nexuslauncher",
-            "com.google.android.inputmethod.latin",
-            "com.amazon.avod.thirdpartyclient",
-            "com.disney.disneyplus",
-            "com.netflix.mediaclient",
-            "in.startv.hotstar"
+        "com.google.android.as",
+        "com.google.android.soundpicker",
+        "com.google.android.apps.safetyhub",
+        "com.google.android.apps.turbo",
+        "com.google.android.apps.turboadapter",
+        "com.google.android.apps.wallpaper",
+        "com.google.android.apps.maps",
+        "com.google.android.apps.nexuslauncher",
+        "com.google.android.inputmethod.latin",
+        "com.amazon.avod.thirdpartyclient",
+        "com.disney.disneyplus",
+        "com.netflix.mediaclient",
+        "in.startv.hotstar"
     };
 
     private static final String[] packagesToChangePixelXL = {
-            "com.google.android.apps.photos"
+        "com.google.android.apps.photos"
     };
 
     private static final String[] packagesToChangePixel2 = {
-            "com.google.android.gms"
+        "com.google.android.gms"
     };
 
     private static final String[] packagesToChangePixel3XL = {
-            "com.google.android.googlequicksearchbox"
+        "com.google.android.googlequicksearchbox"
     };
 
     private static final String[] packagesToChangeOnePlus9Pro = {
-            "com.google.android.apps.wearables.maestro.companion"
+        "com.google.android.apps.wearables.maestro.companion"
     };
 
     static {
