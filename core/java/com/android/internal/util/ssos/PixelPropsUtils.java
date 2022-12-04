@@ -105,11 +105,11 @@ public class PixelPropsUtils {
     }
 
     public static void setProps(String packageName) {
-        if (packageName == null){
+        if (packageName == null) {
             return;
         }
-        if (Arrays.asList(packagesToChange).contains(packageName)){
-            if (DEBUG){
+        if (Arrays.asList(packagesToChange).contains(packageName)) {
+            if (DEBUG) {
                 Log.d(TAG, "Defining props for: " + packageName);
             }
             for (Map.Entry<String, Object> prop : propsToChange.entrySet()) {
@@ -118,8 +118,8 @@ public class PixelPropsUtils {
                 setPropValue(key, value);
             }
         }
-        if (Arrays.asList(packagesToChangePixelXL).contains(packageName)){
-            if (DEBUG){
+        if (Arrays.asList(packagesToChangePixelXL).contains(packageName)) {
+            if (DEBUG) {
                 Log.d(TAG, "Defining props for: " + packageName);
             }
             for (Map.Entry<String, Object> prop : propsToChangePixelXL.entrySet()) {
@@ -128,8 +128,8 @@ public class PixelPropsUtils {
                 setPropValue(key, value);
             }
         }
-        if (Arrays.asList(packagesToChangePixel2).contains(packageName)){
-            if (DEBUG){
+        if (Arrays.asList(packagesToChangePixel2).contains(packageName)) {
+            if (DEBUG) {
                 Log.d(TAG, "Defining props for: " + packageName);
             }
             for (Map.Entry<String, Object> prop : propsToChangePixel2.entrySet()) {
@@ -138,8 +138,8 @@ public class PixelPropsUtils {
                 setPropValue(key, value);
             }
         }
-        if (Arrays.asList(packagesToChangePixel3XL).contains(packageName)){
-            if (DEBUG){
+        if (Arrays.asList(packagesToChangePixel3XL).contains(packageName)) {
+            if (DEBUG) {
                 Log.d(TAG, "Defining props for: " + packageName);
             }
             for (Map.Entry<String, Object> prop : propsToChangePixel3XL.entrySet()) {
@@ -148,8 +148,8 @@ public class PixelPropsUtils {
                 setPropValue(key, value);
             }
         }
-        if (Arrays.asList(packagesToChangeOnePlus9Pro).contains(packageName)){
-            if (DEBUG){
+        if (Arrays.asList(packagesToChangeOnePlus9Pro).contains(packageName)) {
+            if (DEBUG) {
                 Log.d(TAG, "Defining props for: " + packageName);
             }
             for (Map.Entry<String, Object> prop : propsToChangeOnePlus9Pro.entrySet()) {
@@ -159,14 +159,14 @@ public class PixelPropsUtils {
             }
         }
         // Set proper indexing fingerprint
-        if (packageName.equals("com.google.android.settings.intelligence")){
+        if (packageName.equals("com.google.android.settings.intelligence")) {
             setPropValue("FINGERPRINT", Build.DATE);
         }
     }
 
-    private static void setPropValue(String key, Object value){
+    private static void setPropValue(String key, Object value) {
         try {
-            if (DEBUG){
+            if (DEBUG) {
                 Log.d(TAG, "Defining prop " + key + " to " + value.toString());
             }
             Field field = Build.class.getDeclaredField(key);
