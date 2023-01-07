@@ -106,6 +106,19 @@ public class PixelPropsUtils {
         propsToChangeOnePlus9Pro.put("FINGERPRINT", "OnePlus/OnePlus9Pro_EEA/OnePlus9Pro:11/RKQ1.201105.002/2107082109:user/release-keys");
     }
 
+    private static final String[] sFeaturesBlacklist = {
+        "PIXEL_2017_PRELOAD",
+        "PIXEL_2018_PRELOAD",
+        "PIXEL_2019_MIDYEAR_PRELOAD",
+        "PIXEL_2019_PRELOAD",
+        "PIXEL_2020_EXPERIENCE",
+        "PIXEL_2020_MIDYEAR_EXPERIENCE",
+        "PIXEL_2021_EXPERIENCE",
+        "PIXEL_2021_MIDYEAR_EXPERIENCE",
+        "PIXEL_2022_EXPERIENCE",
+        "PIXEL_2022_MIDYEAR_EXPERIENCE"
+    };
+
     public static void setProps(String packageName) {
         if (packageName == null) {
             return;
@@ -178,5 +191,16 @@ public class PixelPropsUtils {
         } catch (NoSuchFieldException | IllegalAccessException e) {
             Log.e(TAG, "Failed to set prop " + key, e);
         }
+    }
+
+    public static boolean hasSystemFeature(String name, boolean def) {
+        if (packageName.equals("com.google.android.apps.photos") && def &&
+                Arrays.stream(sFeaturesBlacklist).anyMatch(name::contains)) {
+            if (DEBUG) {
+                Log.d(TAG, "Blocked system feature " + name + " for Google Photos");
+            }
+            return false;
+        }
+        return def;
     }
 }
