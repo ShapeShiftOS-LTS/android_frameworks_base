@@ -28,6 +28,8 @@ public class PixelPropsUtils {
     private static final String TAG = PixelPropsUtils.class.getSimpleName();
     private static final boolean DEBUG = false;
 
+    private static final String SAMSUNG = "com.samsung.android.";
+
     private static final Map<String, Object> propsToChange;
     private static final Map<String, Object> propsToChangePixelXL;
     private static final Map<String, Object> propsToChangePixel2;
@@ -108,7 +110,7 @@ public class PixelPropsUtils {
         if (packageName == null) {
             return;
         }
-        if (Arrays.asList(packagesToChange).contains(packageName)) {
+        if (Arrays.asList(packagesToChange).contains(packageName) || packageName.startsWith(SAMSUNG)) {
             if (DEBUG) {
                 Log.d(TAG, "Defining props for: " + packageName);
             }
